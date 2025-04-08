@@ -44,28 +44,43 @@ int main() {
                     notamayor = 0;
                     notamenor=10;
 
-                    printf("Ingrese la nota del estudiante\n");
-                    for (int i = 0; i < num; i++) {
-                        do {
-                            printf("Nota de %s: ", estudiantes[i]);
-                            scanf("%f", &notas[i]);
-                            if (notas[i] < 0 || notas[i] > 10) {
-                                printf("Nota no válida. Ingrese una nota entre 0 y 10\n");
-                            }
-                        } while (notas[i] < 0 || notas[i] > 10);
-
-                        if (notas[i] > notamayor) {
-                            notamayor = notas[i];
-                        }
-                        if(notas[i] < notamenor) {
-                            notamenor = notas[i];
-                        }
-                        suma += notas[i];
+                    printf("Ingrese cuántas notas va a ingresar por estudiante: ");
+                    int num_notas;
+                    while (scanf("%d", &num_notas) != 1 || num_notas <= 0) {
+                        printf("Entrada no válida. Por favor, ingrese un número entero positivo: ");
+                        while (getchar() != '\n'); // Limpiar el buffer
                     }
 
-                    promedio = suma / num;
+                    while (getchar() != '\n'); // Limpiar el buffer
 
-                    printf("El promedio de inglés es: %.2f\n", promedio);
+                    printf("Ingrese las notas de los estudiantes:\n");
+                    for (int i = 0; i < num; i++) {
+                        printf("Notas de %s:\n", estudiantes[i]);
+                        suma = 0; // Reiniciar la suma para cada estudiante
+                        for (int j = 0; j < num_notas; j++) {
+                            float nota;
+                            do {
+                                printf("Nota %d: ", j + 1);
+                                scanf("%f", &nota);
+                                if (nota < 0 || nota > 10) {
+                                    printf("Nota no válida. Ingrese una nota entre 0 y 10\n");
+                                }
+                            } while (nota < 0 || nota > 10);
+
+                            suma += nota;
+
+                            if (nota > notamayor) {
+                                notamayor = nota;
+                            }
+                            if (nota < notamenor) {
+                                notamenor = nota;
+                            }
+                        }
+
+                        promedio = suma / num_notas;
+                        printf("Promedio de %s: %.2f\n", estudiantes[i], promedio);
+                    }
+
                     printf("La nota mayor es: %.2f\n", notamayor);
                     printf("La nota menor es: %.2f\n", notamenor);
                     ingles++;
@@ -93,31 +108,45 @@ int main() {
 
                     suma = 0;
                     notamayor = 0;
-                    notamenor=10;
+                    notamenor = 10;
 
-                    printf("Ingrese la nota del estudiante\n");
-                    for (int i = 0; i < num; i++) {
-                        do {
-                            printf("Nota de %s: ", estudiantes[i]);
-                            scanf("%f", &notas[i]);
-                            if (notas[i] < 0 || notas[i] > 10) {
-                                printf("Nota no válida. Ingrese una nota entre 0 y 10\n");
-                            }
-                        } while (notas[i] < 0 || notas[i] > 10);
-
-                        if (notas[i] > notamayor) {
-                            notamayor = notas[i];
-                        }
-                        if(notas[i] < notamenor) {
-                            notamenor = notas[i];
-                        }
-
-                        suma += notas[i];
+                    printf("Ingrese cuántas notas va a ingresar por estudiante: ");
+                    int num_notas;
+                    while (scanf("%d", &num_notas) != 1 || num_notas <= 0) {
+                        printf("Entrada no válida. Por favor, ingrese un número entero positivo: ");
+                        while (getchar() != '\n'); // Limpiar el buffer
                     }
 
-                    promedio = suma / num;
+                    while (getchar() != '\n'); // Limpiar el buffer
 
-                    printf("El promedio de matemáticas es: %.2f\n", promedio);
+                    printf("Ingrese las notas de los estudiantes:\n");
+                    for (int i = 0; i < num; i++) {
+                        printf("Notas de %s:\n", estudiantes[i]);
+                        suma = 0; // Reiniciar la suma para cada estudiante
+                        for (int j = 0; j < num_notas; j++) {
+                            float nota;
+                            do {
+                                printf("Nota %d: ", j + 1);
+                                scanf("%f", &nota);
+                                if (nota < 0 || nota > 10) {
+                                    printf("Nota no válida. Ingrese una nota entre 0 y 10\n");
+                                }
+                            } while (nota < 0 || nota > 10);
+
+                            suma += nota;
+
+                            if (nota > notamayor) {
+                                notamayor = nota;
+                            }
+                            if (nota < notamenor) {
+                                notamenor = nota;
+                            }
+                        }
+
+                        promedio = suma / num_notas;
+                        printf("Promedio de %s: %.2f\n", estudiantes[i], promedio);
+                    }
+
                     printf("La nota mayor es: %.2f\n", notamayor);
                     printf("La nota menor es: %.2f\n", notamenor);
                     matematicas++;
@@ -145,31 +174,45 @@ int main() {
 
                     suma = 0;
                     notamayor = 0;
-                    notamenor=10;
+                    notamenor = 10;
 
-                    printf("Ingrese la nota del estudiante\n");
-                    for (int i = 0; i < num; i++) {
-                        do {
-                            printf("Nota de %s: ", estudiantes[i]);
-                            scanf("%f", &notas[i]);
-                            if (notas[i] < 0 || notas[i] > 10) {
-                                printf("Nota no válida. Ingrese una nota entre 0 y 10\n");
-                            }
-                        } while (notas[i] < 0 || notas[i] > 10);
-
-                        if (notas[i] > notamayor) {
-                            notamayor = notas[i];
-                        }
-                        if(notas[i] < notamenor) {
-                            notamenor = notas[i];
-                        }
-
-                        suma += notas[i];
+                    printf("Ingrese cuántas notas va a ingresar por estudiante: ");
+                    int num_notas;
+                    while (scanf("%d", &num_notas) != 1 || num_notas <= 0) {
+                        printf("Entrada no válida. Por favor, ingrese un número entero positivo: ");
+                        while (getchar() != '\n'); // Limpiar el buffer
                     }
 
-                    promedio = suma / num;
+                    while (getchar() != '\n'); // Limpiar el buffer
 
-                    printf("El promedio de física es: %.2f\n", promedio);
+                    printf("Ingrese las notas de los estudiantes:\n");
+                    for (int i = 0; i < num; i++) {
+                        printf("Notas de %s:\n", estudiantes[i]);
+                        suma = 0; // Reiniciar la suma para cada estudiante
+                        for (int j = 0; j < num_notas; j++) {
+                            float nota;
+                            do {
+                                printf("Nota %d: ", j + 1);
+                                scanf("%f", &nota);
+                                if (nota < 0 || nota > 10) {
+                                    printf("Nota no válida. Ingrese una nota entre 0 y 10\n");
+                                }
+                            } while (nota < 0 || nota > 10);
+
+                            suma += nota;
+
+                            if (nota > notamayor) {
+                                notamayor = nota;
+                            }
+                            if (nota < notamenor) {
+                                notamenor = nota;
+                            }
+                        }
+
+                        promedio = suma / num_notas;
+                        printf("Promedio de %s: %.2f\n", estudiantes[i], promedio);
+                    }
+
                     printf("La nota mayor es: %.2f\n", notamayor);
                     printf("La nota menor es: %.2f\n", notamenor);
                     fisica++;
